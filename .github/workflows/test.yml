@@ -8,7 +8,7 @@ jobs:
         uses: actions/checkout@v2
       - name: show initial iptables
         run: test/list-iptables.sh
-      - uses: SeanChao/clear@master
+      - uses: SeanChao/clear-iptables@master
       - name: check post action iptables
         run: test/list-iptables.sh
       - name: check
