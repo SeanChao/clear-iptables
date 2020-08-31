@@ -1,0 +1,15 @@
+name: Test
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: show initial iptables
+        run: test/list-iptables.sh
+      - uses: SeanChao/clear@master
+      - name: check post action iptables
+        run: test/list-iptables.sh
+      - name: check
+        run: test/iptables-save-count.sh
